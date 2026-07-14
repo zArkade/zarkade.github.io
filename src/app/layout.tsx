@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Navbar from "./components/layout/Navbar";
 import { Geist, Geist_Mono } from "next/font/google";
+import { ThemeProvider } from "./components/theme/ThemeProvider";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -27,10 +28,13 @@ export default function RootLayout({
     <html
       lang="pt-br"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
       <body className="antialiased">
-        <Navbar />
-        <main className="mx-auto max-w-5xl px-6">{children}</main>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <Navbar />
+          <main className="mx-auto max-w-5xl px-6">{children}</main>
+        </ThemeProvider>
       </body>
     </html>
   );
