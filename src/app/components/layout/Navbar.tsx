@@ -1,22 +1,33 @@
 "use client";
 
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import { useTheme } from "next-themes";
-import { Mail, Sun, Moon, Languages, Menu } from "lucide-react";
+import { useLocale, useTranslations } from "next-intl";
+import { Link, usePathname, useRouter } from "@/i18n/navigation";
+import { Mail, Moon, Sun, Languages, Menu } from "lucide-react";
 import { FaGithub, FaWhatsapp } from "react-icons/fa6";
 
-const NAV_LINKS = [
-  { href: "/blog", label: "Blog" },
-  { href: "/projetos", label: "Projetos" },
-  { href: "/sobre", label: "Sobre" },
-];
-
 export default function Navbar() {
+  const t = useTranslations("Nav");
+  const locale = useLocale();
+  const pathname = usePathname();
+  const router = useRouter();
+
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
-
   useEffect(() => setMounted(true), []);
+
+  const NAV_LINKS = [
+    { href: "/blog", label: t("blog") },
+    { href: "/projetos", label: t("projetos") },
+    { href: "/sobre", label: t("sobre") },
+  ];
+
+  const switchLocale = () => {
+    const nextLocale = locale === "pt-BR" ? "en-US" : "pt-BR";
+    router.replace(pathname, { locale: nextLocale });
+  };
+
   return (
     <header className="sticky top-0 z-50 border-b border-neutral-200 bg-white/80 backdrop-blur dark:border-neutral-800 dark:bg-neutral-950/80">
       <nav className="mx-auto flex max-w-5xl items-center justify-between px-6 py-4">
@@ -56,7 +67,13 @@ export default function Navbar() {
           >
             {mounted && theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
           </button>
-          <button type="button" aria-label="Alternar idioma" className="hover:text-neutral-900 dark:hover:text-white">
+
+          <button
+            type="button"
+            aria-label="Alternar idioma"
+            onClick={switchLocale}
+            className="hover:text-neutral-900 dark:hover:text-white"
+          >
             <Languages size={18} />
           </button>
 
