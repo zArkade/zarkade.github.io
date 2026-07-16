@@ -2,20 +2,27 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Space_Grotesk, IBM_Plex_Sans, IBM_Plex_Mono } from "next/font/google";
 import { routing } from "@/i18n/routing";
 import Navbar from "../components/layout/Navbar";
 import { ThemeProvider } from "../components/theme/ThemeProvider";
 import "../globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const displayFont = Space_Grotesk({
+  variable: "--font-display-utility",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const bodyFont = IBM_Plex_Sans({
+  variable: "--font-body-utility",
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
+});
+
+const monoFont = IBM_Plex_Mono({
+  variable: "--font-mono-utility",
+  subsets: ["latin"],
+  weight: ["400", "500"],
 });
 
 export const metadata: Metadata = {
@@ -44,15 +51,15 @@ export default async function LocaleLayout({
 
   return (
     <html
-      lang="pt-br"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-      suppressHydrationWarning
+    lang={locale}
+    className={`${displayFont.variable} ${bodyFont.variable} ${monoFont.variable} h-full antialiased`}
+    suppressHydrationWarning
     >
-      <body className="antialiased">
+      <body className="antialiased font-sans">
         <NextIntlClientProvider>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <Navbar />
-            <main className="mx-auto max-w-5xl px-6">{children}</main>
+            <main>{children}</main>
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>
