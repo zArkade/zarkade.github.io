@@ -3,5 +3,12 @@
     "blog": "Blog",
     "projetos": "Projects",
     "sobre": "About"
+  },
+  "Hero": {
+    "eyebrow": "Systems: operational",
+    "name": "Marcos Gonçalves",
+    "role": "Back-end Systems Developer",
+    "description": "I build the part nobody sees: APIs, integrations, and databases that keep production systems running.",
+    "scroll": "scroll for more"
   }
 }

@@ -3,5 +3,12 @@
     "blog": "Blog",
     "projetos": "Projetos",
     "sobre": "Sobre"
+  },
+  "Hero": {
+    "eyebrow": "Sistemas: operacional",
+    "name": "Marcos Gonçalves",
+    "role": "Desenvolvedor Back-end",
+    "description": "Construo a parte que ninguém vê: APIs, integrações e bancos de dados que sustentam aplicações em produção.",
+    "scroll": "role para ver mais"
   }
 }

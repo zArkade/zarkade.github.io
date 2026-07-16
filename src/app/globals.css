@@ -4,18 +4,47 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --hero-bg: #f7f8fb;
+  --hero-bg-2: #eef1f6;
+  --hero-ink: #0b1220;
+  --hero-muted: #5b6478;
+  --hero-accent: #c77d2e;
+  --hero-signal: #2f9e6e;
 }
 
 .dark {
   --background: #0a0a0a;
   --foreground: #ededed;
+  --hero-bg: #0b1220;
+  --hero-bg-2: #131b2e;
+  --hero-ink: #edeff4;
+  --hero-muted: #8b93a7;
+  --hero-accent: #e8a855;
+  --hero-signal: #5fbf8b;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-hero-bg: var(--hero-bg);
+  --color-hero-bg-2: var(--hero-bg-2);
+  --color-hero-ink: var(--hero-ink);
+  --color-hero-muted: var(--hero-muted);
+  --color-hero-accent: var(--hero-accent);
+  --color-hero-signal: var(--hero-signal);
+  --font-display: var(--font-display-utility);
+  --font-sans: var(--font-body-utility);
+  --font-mono: var(--font-mono-utility);
+  --animate-pulse-scroll: pulse-scroll 6s linear infinite;
+
+  @keyframes pulse-scroll {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
 }
 
 body {
