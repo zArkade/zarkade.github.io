@@ -50,11 +50,7 @@ export default async function LocaleLayout({
   setRequestLocale(locale);
 
   return (
-    <html
-    lang={locale}
-    className={`${displayFont.variable} ${bodyFont.variable} ${monoFont.variable} h-full antialiased`}
-    suppressHydrationWarning
-    >
+    <html lang={locale} className={`${displayFont.variable} ${bodyFont.variable} ${monoFont.variable} h-full antialiased`} suppressHydrationWarning>
       <body className="antialiased font-sans">
         <NextIntlClientProvider>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>

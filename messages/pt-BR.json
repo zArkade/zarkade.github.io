@@ -2,13 +2,27 @@
   "Nav": {
     "blog": "Blog",
     "projetos": "Projetos",
-    "sobre": "Sobre"
+    "sobre": "Sobre",
+    "github": "GitHub",
+    "linkedin":"Linkedin",
+    "email": "E-mail",
+    "whatsapp": "WhatsApp",
+    "theme": "Tema",
+    "language": "Idioma",
+    "menu": "Menu"
   },
   "Hero": {
-    "eyebrow": "Sistemas: operacional",
+    "eyebrow": "Sistemas: operando e buscando desafios!",
     "name": "Marcos Gonçalves",
     "role": "Desenvolvedor Back-end",
     "description": "Construo a parte que ninguém vê: APIs, integrações e bancos de dados que sustentam aplicações em produção.",
     "scroll": "role para ver mais"
+  },
+  "Sobre": {
+    "title": "Sobre mim",
+    "bio": "Engenheiro da Computação com experiência em suporte, desenvolvimento de software e análise de dados. Possui conhecimentos em desenvolvimento backend com PHP, Node.js, JavaScript, C#, Java e DataFlex, além de experiência com bancos de dados MySQL e PostgreSQL.",
+    "professionalTitle": "Trajetória profissional",
+    "educationTitle": "Formação",
+    "socialTitle": "Redes"
   }
 }

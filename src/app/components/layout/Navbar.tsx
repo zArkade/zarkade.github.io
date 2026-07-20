@@ -1,11 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useTheme } from "next-themes";
 import { useLocale, useTranslations } from "next-intl";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import { Mail, Moon, Sun, Languages, Menu } from "lucide-react";
-import { FaGithub, FaWhatsapp } from "react-icons/fa6";
+import { FaGithub, FaWhatsapp, FaLinkedin } from "react-icons/fa6";
+import { Tooltip } from "@/app/components/ui/Tooltip";
 
 export default function Navbar() {
   const t = useTranslations("Nav");
@@ -13,9 +14,15 @@ export default function Navbar() {
   const pathname = usePathname();
   const router = useRouter();
 
+  const isFirstRender = useRef(true);
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
+  useEffect(() => {
+    if (isFirstRender.current) {
+      isFirstRender.current = false;
+      setMounted(true);
+    }
+  }, []);
 
   const NAV_LINKS = [
     { href: "/blog", label: t("blog") },
@@ -49,33 +56,38 @@ export default function Navbar() {
         </ul>
 
         <div className="flex items-center gap-4 text-neutral-500 dark:text-neutral-400">
-          <a href="https://github.com/zArkade" target="_blank" rel="noreferrer" aria-label="GitHub">
-            <FaGithub size={18} className="hover:text-neutral-900 dark:hover:text-white" />
-          </a>
-          <a href="mailto:contato.marcosribeiro@outlook.com" aria-label="E-mail">
-            <Mail size={18} className="hover:text-neutral-900 dark:hover:text-white" />
-          </a>
-          <a href="https://wa.me/5511979931521" target="_blank" rel="noreferrer" aria-label="WhatsApp">
-            <FaWhatsapp size={18} className="hover:text-neutral-900 dark:hover:text-white" />
-          </a>
+          <Tooltip label={t("github")}>
+            <a href="https://github.com/zArkade" target="_blank" rel="noreferrer" aria-label="GitHub">
+              <FaGithub size={18} className="hover:text-neutral-900 dark:hover:text-white" />
+            </a>
+          </Tooltip>
+          <Tooltip label={t("linkedin")}>
+            <a href="https://www.linkedin.com/in/marcosribeirogon%C3%A7alves/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
+              <FaLinkedin size={18} className="hover:text-neutral-900 dark:hover:text-white" />
+            </a>
+          </Tooltip>
+          <Tooltip label={t("email")}>
+            <a href="mailto:contato.marcosribeiro@outlook.com" aria-label="E-mail">
+              <Mail size={18} className="hover:text-neutral-900 dark:hover:text-white" />
+            </a>
+          </Tooltip>
+          <Tooltip label={t("whatsapp")}>
+            <a href="https://wa.me/5511979931521" target="_blank" rel="noreferrer" aria-label="WhatsApp">
+              <FaWhatsapp size={18} className="hover:text-neutral-900 dark:hover:text-white" />
+            </a>
+          </Tooltip>
 
-          <button
-            type="button"
-            aria-label="Alternar tema"
-            onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="hover:text-neutral-900 dark:hover:text-white"
-          >
-            {mounted && theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
-          </button>
+          <Tooltip label={t("theme")}>
+            <button type="button" aria-label="Alternar tema" onClick={() => setTheme(theme === "dark" ? "light" : "dark")} className="hover:text-neutral-900 dark:hover:text-white">
+              {mounted && theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+            </button>
+          </Tooltip>
 
-          <button
-            type="button"
-            aria-label="Alternar idioma"
-            onClick={switchLocale}
-            className="hover:text-neutral-900 dark:hover:text-white"
-          >
-            <Languages size={18} />
-          </button>
+          <Tooltip label={t("language")}>
+            <button type="button" aria-label="Alternar idioma" onClick={switchLocale} className="hover:text-neutral-900 dark:hover:text-white">
+              <Languages size={18} />
+            </button>
+          </Tooltip>
 
           <button type="button" aria-label="Abrir menu" className="sm:hidden">
             <Menu size={20} />

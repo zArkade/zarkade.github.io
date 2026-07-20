@@ -2,13 +2,27 @@
   "Nav": {
     "blog": "Blog",
     "projetos": "Projects",
-    "sobre": "About"
+    "sobre": "About",
+    "github": "GitHub",
+    "email": "Mail",
+    "linkedin":"Linkedin",
+    "whatsapp": "WhatsApp",
+    "theme": "Theme",
+    "language": "Language",
+    "menu": "Menu"
   },
   "Hero": {
-    "eyebrow": "Systems: operational",
+    "eyebrow": "Systems: online and running, seeking challenges!",
     "name": "Marcos Gonçalves",
-    "role": "Back-end Systems Developer",
-    "description": "I build the part nobody sees: APIs, integrations, and databases that keep production systems running.",
+    "role": "Back-end Developer",
+    "description": "I build the part nobody sees: APIs, integrations, and databases that keep production applications running.",
     "scroll": "scroll for more"
+  },
+  "Sobre": {
+    "title": "About me",
+    "bio": "Computer Engineer with experience in support, software development, and data analysis. Skilled in back-end development with PHP, Node.js, JavaScript, C#, Java, and DataFlex, with additional experience in MySQL and PostgreSQL databases.",
+    "professionalTitle": "Professional journey",
+    "educationTitle": "Education",
+    "socialTitle": "Social"
   }
 }
