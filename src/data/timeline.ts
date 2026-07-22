@@ -22,7 +22,7 @@ export const professionalTimeline: Record<string, TimelineEntry[]> = {
     {
       period: "11/2020 — 09/2021",
       title: "Suporte TI",
-      org: "Movax Comercios de produtos Texteis LTDA",
+      org: "Novax Comercios de produtos Texteis LTDA",
       description: "• Auxilio a colaboradores, manutenção de hardware e suporte em sistemas internos.",
     },
     {
@@ -48,7 +48,7 @@ export const professionalTimeline: Record<string, TimelineEntry[]> = {
     {
       period: "11/2020 — 09/2021",
       title: "IT Support",
-      org: "Movax Comercios de produtos Texteis LTDA",
+      org: "Novax Comercios de produtos Texteis LTDA",
       description: "• Assisted staff, performed hardware maintenance, and supported internal systems.",
     },
     {
