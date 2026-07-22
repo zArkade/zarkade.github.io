@@ -26,7 +26,7 @@ export default async function Hero() {
           {t("name")}
         </h1>
 
-        <p className="mt-4 font-mono text-sm font-medium text-accent sm:text-base">
+        <p className="mt-4 gap-2 font-mono text-sm font-medium text-accent sm:text-base">
           {t("role")}
         </p>
 
