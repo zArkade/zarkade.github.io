@@ -45,3 +45,33 @@ body {
   background: var(--background);
   color: var(--foreground);
 }
+
+.prose {
+  --tw-prose-body: var(--muted);
+  --tw-prose-headings: var(--foreground);
+  --tw-prose-links: var(--accent);
+  --tw-prose-bold: var(--foreground);
+  --tw-prose-code: var(--foreground);
+  --tw-prose-quotes: var(--foreground);
+  --tw-prose-quote-borders: var(--accent);
+  --tw-prose-hr: color-mix(in oklab, var(--muted) 20%, transparent);
+}
+
+[data-rehype-pretty-code-figure] pre {
+  overflow-x: auto;
+  border-radius: 0.5rem;
+  border: 1px solid color-mix(in oklab, var(--muted) 20%, transparent);
+  background-color: var(--background-2);
+  padding: 1rem;
+  font-size: 0.875rem;
+}
+
+code[data-theme*=" "],
+code[data-theme*=" "] span {
+  color: var(--shiki-light);
+}
+
+.dark code[data-theme*=" "],
+.dark code[data-theme*=" "] span {
+  color: var(--shiki-dark);
+}

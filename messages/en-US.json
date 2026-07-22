@@ -24,5 +24,13 @@
     "professionalTitle": "Professional journey",
     "educationTitle": "Education",
     "socialTitle": "Social"
+  },
+  "Blog": {
+  "title": "Blog",
+  "description": "Notes and ideas about systems, code, what I learn along the way and maybe a lit be my life",
+  "empty": "No posts published yet.",
+  "searchPlaceholder": "Search by title or excerpt...",
+  "allTags": "All",
+  "noResults": "No posts match these filters."
   }
 }

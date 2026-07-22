@@ -24,5 +24,13 @@
     "professionalTitle": "Trajetória profissional",
     "educationTitle": "Formação",
     "socialTitle": "Redes"
+  },
+  "Blog": {
+    "title": "Blog",
+    "description": "Anotações e ideias sobre sistemas, códigos, o que estou aprendendo e um pouco sobre eu mesmo talvez.",
+    "empty":"Nenhum post publicado ainda",
+    "searchPlaceholder": "Buscar por título ou resumo...",
+    "allTags": "Todas",
+    "noResults": "Nenhum post encontrado com esses filtros."
   }
 }
