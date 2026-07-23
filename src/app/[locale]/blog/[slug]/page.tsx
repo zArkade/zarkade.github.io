@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { MDXRemote } from "next-mdx-remote/rsc";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { getPostBySlug, getPostSlugs } from "@/lib/posts";
 import { mdxOptions } from "@/lib/mdx-options";
@@ -8,9 +8,14 @@ import { GiscusComments } from "@/app/components/blog/GiscusComments";
 import { blogGiscusConfig } from "@/lib/giscus-config";
 
 export function generateStaticParams() {
-  return routing.locales.flatMap((locale) =>
+  const params = routing.locales.flatMap((locale) =>
     getPostSlugs(locale).map((slug) => ({ locale, slug }))
   );
+
+  if (params.length > 0) {
+    return params;
+  }
+  return routing.locales.map((locale) => ({ locale, slug: "__no_posts__" }));
 }
 
 export default async function PostPage({
@@ -21,7 +26,18 @@ export default async function PostPage({
   const { locale, slug } = await params;
   setRequestLocale(locale);
 
-  if (!getPostSlugs(locale).includes(slug)) {
+  const slugs = getPostSlugs(locale);
+
+  if (slugs.length === 0) {
+    const t = await getTranslations("Blog");
+    return (
+      <div className="mx-auto max-w-3xl px-6 py-20 text-center text-muted">
+        {t("empty")}
+      </div>
+    );
+  }
+
+  if (!slugs.includes(slug)) {
     notFound();
   }
 
