@@ -44,9 +44,9 @@ export default async function Hero() {
         </ul>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 font-mono text-xs text-muted">
+      {/* <div className="absolute bottom-8 left-1/2 -translate-x-1/2 font-mono text-xs text-muted">
         ↓ {t("scroll")}
-      </div>
+      </div> */}
     </section>
   );
 }

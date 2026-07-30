@@ -12,9 +12,9 @@ export const blogGiscusConfig: GiscusConfig = {
   categoryId: "DIC_kwDOM-cFoc4DBusm",
 };
 
-// export const projectGiscusConfig = (owner: string, repo: string, repoId: string, categoryId: string): GiscusConfig => ({
-//   repo: `${owner}/${repo}`,
-//   repoId,
-//   category: "Comentarios",
-//   categoryId,
-// });
+export const projectGiscusConfig = (owner: string, repo: string, repoId: string, categoryId: string): GiscusConfig => ({
+  repo: `${owner}/${repo}`,
+  repoId,
+  category: "Comentarios",
+  categoryId,
+});
