@@ -16,14 +16,14 @@
     "name": "Marcos Gonçalves",
     "role": "Desenvolvedor Back-end",
     "description": "Construo a parte que ninguém vê: Bancos de dados, API e integrações que sustentam aplicações em produção.",
-    "scroll": "role para ver mais"
+    "scroll": ""
   },
   "Sobre": {
     "title": "Sobre mim",
     "bio": "Engenheiro da Computação com experiência em suporte, desenvolvimento de software e análise de dados. Possui conhecimentos em desenvolvimento backend com PHP, Node.js, JavaScript, C#, Java e DataFlex, além de experiência com bancos de dados MySQL e PostgreSQL.",
     "professionalTitle": "Trajetória profissional",
     "educationTitle": "Formação",
-    "socialTitle": "Redes"
+    "socialTitle": "Redes Sociais"
   },
   "Blog": {
     "title": "Blog",
@@ -32,5 +32,19 @@
     "searchPlaceholder": "Buscar por título ou resumo...",
     "allTags": "Todas",
     "noResults": "Nenhum post encontrado com esses filtros."
+  },
+  "Projetos": {
+  "title": "Projetos",
+  "description": "Repositórios públicos, puxados automaticamente do GitHub.",
+  "viewSite": "Ver site",
+  "fork":"Fork",
+  "searchPlaceholder": "Buscar por nome ou descrição...",
+  "allLanguages": "Todos",
+  "empty": "Nenhum projeto encontrado no momento.",
+  "noResults": "Nenhum projeto encontrado com esses filtros.",
+  "featured": "Destaque",
+  "viewOnGithub": "Ver no GitHub",
+  "challengesTitle": "Desafios enfrentados",
+  "noChallenges": "Ainda não escrevi sobre os desafios desse projeto."
   }
 }
