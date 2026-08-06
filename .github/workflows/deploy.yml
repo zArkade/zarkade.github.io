@@ -30,15 +30,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build (build + export to ./out)
+      - name: Build
         run: npm run build
-
-      - name: Show ./out contents (diagnóstico)
-        run: |
-          echo "=== ./out listing ==="
-          ls -la ./out || true
-          echo "=== Top-level files count ==="
-          find ./out -maxdepth 2 -type f | wc -l
 
       - name: Add .nojekyll
         run: touch ./out/.nojekyll
@@ -52,7 +45,6 @@ jobs:
           path: ./out
 
   deploy:
-    timeout-minutes: 20
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
