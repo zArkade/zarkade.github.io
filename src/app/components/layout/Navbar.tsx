@@ -4,7 +4,7 @@ import { useEffect, useState, useRef } from "react";
 import { useTheme } from "next-themes";
 import { useLocale, useTranslations } from "next-intl";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
-import { Mail, Moon, Sun, Languages, Menu } from "lucide-react";
+import { Mail, Moon, Sun, Languages, Menu, X } from "lucide-react";
 import { FaGithub, FaWhatsapp, FaLinkedin } from "react-icons/fa6";
 import { Tooltip } from "@/app/components/ui/Tooltip";
 
@@ -23,6 +23,8 @@ export default function Navbar() {
       setMounted(true);
     }
   }, []);
+
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const NAV_LINKS = [
     { href: "/blog", label: t("blog") },
@@ -89,11 +91,33 @@ export default function Navbar() {
             </button>
           </Tooltip>
 
-          <button type="button" aria-label="Abrir menu" className="sm:hidden">
-            <Menu size={20} />
+          <button
+            type="button"
+            aria-label={mobileMenuOpen ? t("closeMenu") : t("menu")}
+            onClick={() => setMobileMenuOpen((open) => !open)}
+            className="sm:hidden"
+          >
+            {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </nav>
+      {mobileMenuOpen && (
+        <div className="border-t border-neutral-200 bg-white px-6 py-4 dark:border-neutral-800 dark:bg-neutral-950 sm:hidden">
+          <ul className="flex flex-col gap-4 text-sm font-medium text-neutral-600 dark:text-neutral-300">
+            {NAV_LINKS.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="block hover:text-neutral-900 dark:hover:text-white"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
     </header>
   );
 }
