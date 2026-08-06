@@ -46,5 +46,8 @@
   "viewOnGithub": "Ver no GitHub",
   "challengesTitle": "Desafios enfrentados",
   "noChallenges": "Ainda não escrevi sobre os desafios desse projeto."
+  },
+  "Footer":{
+    "visitors": "Visitantes"
   }
 }

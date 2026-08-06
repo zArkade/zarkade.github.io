@@ -7,6 +7,8 @@ import { routing } from "@/i18n/routing";
 import Navbar from "../components/layout/Navbar";
 import { ThemeProvider } from "../components/theme/ThemeProvider";
 import "../globals.css";
+import Script from "next/script";
+import { Footer } from "../components/layout/Footer";
 
 const displayFont = Space_Grotesk({
   variable: "--font-display-utility",
@@ -56,8 +58,14 @@ export default async function LocaleLayout({
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             <Navbar />
             <main>{children}</main>
+            <Footer />
           </ThemeProvider>
         </NextIntlClientProvider>
+        <Script
+          data-goatcounter="https://zarkade-visitor-counter.zarkade.workers.dev/"
+          src="https://gc.zgo.at/count.js"
+          strategy="afterInteractive"
+        />
       </body>
     </html>
   );

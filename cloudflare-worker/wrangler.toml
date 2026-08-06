@@ -1,0 +1,7 @@
+name = "zarkade-visitor-counter"
+main = "src/worker.js"
+compatibility_date = "2026-01-01"
+
+kv_namespaces = [
+  { binding = "VISITOR_COUNTER", id = "3fcf964585504c9eabf2dc589bb17edb" }
+]
