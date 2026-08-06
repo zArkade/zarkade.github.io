@@ -9,7 +9,8 @@
     "whatsapp": "WhatsApp",
     "theme": "Theme",
     "language": "Language",
-    "menu": "Menu"
+    "menu": "Menu",
+    "closeMenu": "Close menu"
   },
   "Hero": {
     "eyebrow": "Systems: online and running, seeking challenges!",
@@ -27,7 +28,7 @@
   },
   "Blog": {
   "title": "Blog",
-  "description": "Notes and ideas about systems, code, what I learn along the way and maybe a lit be my life",
+  "description": "Notes and ideas about systems, code, what I'm learning, and maybe about myself :D",
   "empty": "No posts published yet.",
   "searchPlaceholder": "Search by title or excerpt...",
   "allTags": "All",

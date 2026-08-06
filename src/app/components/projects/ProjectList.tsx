@@ -119,7 +119,7 @@ export function ProjectList({
               <time
                 dateTime={project.pushedAt}
                 className="shrink-0 font-mono text-xs text-foreground"
-              >
+              >📝:
                 {formatDate(project.pushedAt, locale)}
               </time>
             </div>
